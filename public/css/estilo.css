@@ -1,0 +1,246 @@
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #243447;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+.header-principal {
+    background-color: #102d4f;
+    color: white;
+    padding: 20px 8%;
+}
+
+.header-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-marca h1 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.header-marca p {
+    color: #bdd5e8;
+    font-size: 13px;
+}
+
+/* ==============================
+   MENÚ DE NAVEGACIÓN
+============================== */
+
+.menu-navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.menu-navegacion a {
+    color: #dce9f3;
+    text-decoration: none;
+    font-size: 13px;
+
+    padding: 9px 15px;
+    border-radius: 7px;
+
+    transition: background 0.2s,
+                color 0.2s;
+}
+
+.menu-navegacion a:hover {
+    background-color: #1e496b;
+    color: white;
+}
+
+.menu-navegacion a.activo {
+    background-color: #0e7490;
+    color: white;
+    font-weight: 600;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* PANEL DE MÓDULOS */
+
+.panel-modulos {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* CONTENEDOR DE TARJETAS */
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS DE LOS MÓDULOS */
+
+.tarjeta-modulo {
+    background-color: white;
+    border: 1px solid #e4eaf1;
+    border-radius: 15px;
+
+    padding: 32px 25px;
+    text-decoration: none;
+    color: #243447;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transition: transform 0.3s,
+                box-shadow 0.3s,
+                border-color 0.3s;
+}
+
+.tarjeta-modulo:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border-color: #0e7490;
+}
+
+.tarjeta-modulo:focus-visible {
+    outline: 3px solid #0e7490;
+    outline-offset: 4px;
+}
+
+/* ICONOS DE LAS TARJETAS */
+
+.icono-modulo {
+    background-color: #e8f5fa;
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* TEXTOS DE LAS TARJETAS */
+
+.tarjeta-modulo h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-modulo p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+/* BOTONES */
+
+.boton-ingresar {
+    display: inline-block;
+
+    background-color: #0e7490;
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: background 0.3s;
+}
+
+.tarjeta-modulo:hover .boton-ingresar {
+    background-color: #102d4f;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #102d4f;
+    color: #d5e5f0;
+
+    text-align: center;
+    padding: 20px;
+
+    font-size: 13px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-modulos {
+        padding: 35px 20px;
+    }
+
+    .tarjeta-modulo {
+        padding: 25px;
+    }
+
+    .header-principal {
+        padding: 20px;
+    }
+
+    .menu-navegacion {
+        gap: 8px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 10px;
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "ues/proyecto-ocean",
+    "description": "Proyecto Ocean-Contabilidad",
+    "type": "project",
+    "require": {
+        "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Lib\\": "lib/"
+    },
+    "files": [
+      "lib/helpers.php"
+    ]
+  }
+}
