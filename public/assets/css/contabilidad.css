@@ -1,0 +1,121 @@
+.conta-module {
+    --bg-card: #111318;
+    --bg-subcard: #161920;
+    --bg-input: #090a0d;
+    --border: #262b36;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent: #3b82f6;
+    --success: #22c55e;
+    --danger: #ef4444;
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--text-main);
+}
+.conta-module * { box-sizing: border-box; }
+.conta-module .conta-topbar {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 14px 20px; margin-bottom: 20px;
+}
+.conta-module .nav-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.conta-module .nav-tab {
+    text-decoration: none; color: var(--text-muted); padding: 8px 14px;
+    border-radius: 8px; font-size: 0.86rem; font-weight: 600;
+}
+.conta-module .nav-tab:hover { color: var(--text-main); background: var(--bg-subcard); }
+.conta-module .nav-tab.active { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+.conta-module .grid-2-asymmetric { display: grid; grid-template-columns: 420px 1fr; gap: 20px; align-items: start; }
+@media (max-width: 1024px) { .conta-module .grid-2-asymmetric { grid-template-columns: 1fr; } }
+.conta-module .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; overflow-x: auto; }
+.conta-module .card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 4px; }
+.conta-module .card-sub { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 16px; }
+.conta-module .form-group { margin-bottom: 12px; }
+.conta-module .no-margin { margin: 0 !important; }
+.conta-module .checkbox-row { display: flex; align-items: center; gap: 8px; }
+.conta-module .checkbox-row input { width: auto; }
+.conta-module label { display: block; font-size: 0.8rem; color: #d1d5db; margin-bottom: 5px; }
+.conta-module input[type="text"], .conta-module select {
+    width: 100%; background: var(--bg-input); border: 1px solid var(--border);
+    color: var(--text-main); border-radius: 8px; padding: 9px 11px; font-size: 0.88rem;
+}
+.conta-module .btn { padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; font-weight: 600; width: 100%; }
+.conta-module .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; margin-top: 8px; }
+.conta-module .btn-secondary { background: var(--bg-subcard); color: var(--text-main); margin-top: 8px; }
+.conta-module .btn-edit-sm { background: rgba(59, 130, 246, 0.15); border: 1px solid var(--accent); color: #93c5fd; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; }
+.conta-module .btn-danger-sm { background: rgba(239, 68, 68, 0.15); border: 1px solid var(--danger); color: #fca5a5; padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; }
+.conta-module table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.conta-module th, .conta-module td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.conta-module th { color: var(--text-muted); font-weight: 600; background: var(--bg-subcard); }
+.conta-module .center { text-align: center; }
+.conta-module .nowrap { white-space: nowrap; }
+.conta-module .row-padre td { font-weight: 700; background: #141821; }
+.conta-module .indent-subcuenta { padding-left: 24px; }
+.conta-module .inline-form { display: inline; }
+.conta-module .text-muted { color: var(--text-muted); }
+.conta-module .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.72rem; text-transform: uppercase; background: #1f2937; color: #d1d5db; }
+.conta-module .alert { padding: 11px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 0.86rem; }
+.conta-module .alert-ok { background: rgba(34, 197, 94, 0.12); border: 1px solid var(--success); color: #86efac; }
+.conta-module .alert-err { background: rgba(239, 68, 68, 0.12); border: 1px solid var(--danger); color: #fca5a5; }
+.conta-module .alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.86rem;
+    transition: opacity 0.4s ease;
+}
+.conta-module .alert-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.conta-module .paginacion-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+.conta-module .paginacion-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.conta-module .btn-pag {
+    background: var(--bg-subcard);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.conta-module .btn-pag:hover:not(:disabled) {
+    background: #1f242d;
+    border-color: var(--accent);
+}
+.conta-module .btn-pag.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+}
+.conta-module .btn-pag:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
