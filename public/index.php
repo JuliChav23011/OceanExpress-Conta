@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 $pagina = $_GET['pagina'] ?? 'inicio';
+$accion = $_GET['accion'] ?? 'index';
 
 $paginas = [
     'inicio' => null,
@@ -13,6 +14,18 @@ $paginas = [
 if (!array_key_exists($pagina, $paginas)) {
     http_response_code(404);
     $pagina = 'error';
+}
+
+$contabilidadController = null;
+if ($pagina === 'contabilidad') {
+    require_once __DIR__ . '/../app/controllers/contabilidad/ContabilidadController.php';
+    $contabilidadController = new ContabilidadController();
+
+    $accionesPost = ['guardarAsiento', 'guardarCuenta', 'editarCuenta', 'eliminarCuenta'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && in_array($accion, $accionesPost, true)) {
+        $contabilidadController->$accion();
+        exit;
+    }
 }
 
 $titulo = ucfirst($pagina) . ' - OceanConta';
@@ -32,7 +45,7 @@ if ($pagina === 'inicio') {
     <div class="contenedor-tarjetas">
 
         <a href="/index.php?pagina=contabilidad"
-           class="tarjeta-modulo">
+            class="tarjeta-modulo">
 
             <div class="icono-modulo">📒</div>
 
@@ -49,7 +62,7 @@ if ($pagina === 'inicio') {
         </a>
 
         <a href="/index.php?pagina=costos"
-           class="tarjeta-modulo">
+            class="tarjeta-modulo">
 
             <div class="icono-modulo">📊</div>
 
@@ -66,7 +79,7 @@ if ($pagina === 'inicio') {
         </a>
 
         <a href="/index.php?pagina=verificacion"
-           class="tarjeta-modulo">
+            class="tarjeta-modulo">
 
             <div class="icono-modulo">✅</div>
 
@@ -88,7 +101,10 @@ if ($pagina === 'inicio') {
 <?php
 } elseif ($pagina === 'error') {
     echo '<h2>Página no encontrada</h2>';
-} else {
+} elseif ($pagina === 'contabilidad' && $contabilidadController != null) {
+    $contabilidadController->index();
+}
+else {
     require $paginas[$pagina];
 }
 
